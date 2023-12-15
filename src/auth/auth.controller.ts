@@ -16,7 +16,6 @@ export class AuthController {
       res.redirect('https://todo-tracker-production.up.railway.app');
     }
 
-    @UseGuards(AuthenticatedGuard)
     @Get('login/success')
     loginSuccess(@Req() req: Request, @Res() res: Response) {
       return res
