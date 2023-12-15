@@ -7,8 +7,7 @@ import * as session from 'express-session';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: 'https://todo-tracker-production.up.railway.app',
-    methods: 'GET,POST,PUT,DELETE',
+    origin: '*',
     credentials: true,
   });
   app.use(
