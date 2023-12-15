@@ -13,7 +13,7 @@ export class AuthController {
     @UseGuards(GoogleAuthGuard)
     @Get('google/callback')
     googleLoginCallback(@Req() req: Request,@Res() res: Response) {
-      res.redirect(process.env.CLIENT_URL);
+      res.redirect('https://todo-tracker-production.up.railway.app');
     }
 
     @UseGuards(AuthenticatedGuard)
