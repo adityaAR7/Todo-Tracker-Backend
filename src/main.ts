@@ -15,7 +15,7 @@ async function bootstrap() {
     session({
       secret: process.env.SECRET,
       resave: false,
-      saveUninitialized: false,
+      saveUninitialized: true,
       cookie: {
         //for storing cookie in the client side
         maxAge: 24 * 60 * 60 * 1000,
