@@ -19,7 +19,8 @@ async function bootstrap() {
         //for storing cookie in the client side
         maxAge: 24 * 60 * 60 * 1000,
         secure: true,
-        httpOnly:false
+        httpOnly:false,
+        sameSite:'none'
       },
     }),
   );
