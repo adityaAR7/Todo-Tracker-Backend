@@ -6,6 +6,6 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [UserModule, AuthModule, TodoModule,MongooseModule.forRoot('mongodb+srv://aditya:yPHbeHpNqg4yqj1q@cluster0.zudjwly.mongodb.net/?retryWrites=true&w=majority'),ConfigModule.forRoot({})],
+  imports: [UserModule, AuthModule, TodoModule,MongooseModule.forRoot('mongodb://mongo:F3fFg-bCEbgAeC4dhfa3f4eagAG1DdcC@monorail.proxy.rlwy.net:44247'),ConfigModule.forRoot({})],
 })
 export class AppModule {}
