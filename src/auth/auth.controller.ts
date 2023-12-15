@@ -13,7 +13,7 @@ export class AuthController {
     @UseGuards(GoogleAuthGuard)
     @Get('google/callback')
     googleLoginCallback(@Req() req: Request,@Res() res: Response) {
-      res.redirect('https://startling-nougat-582962.netlify.app');
+      res.redirect(process.env.CLIENT_URL);
     }
 
     @UseGuards(AuthenticatedGuard)
