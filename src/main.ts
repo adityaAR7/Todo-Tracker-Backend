@@ -13,12 +13,13 @@ async function bootstrap() {
   app.use(
     session({
       secret: process.env.SECRET,
-      resave: true,
+      resave: false,
       saveUninitialized: true,
       cookie: {
         //for storing cookie in the client side
         maxAge: 24 * 60 * 60 * 1000,
         secure: true,
+        httpOnly:false
       },
     }),
   );
