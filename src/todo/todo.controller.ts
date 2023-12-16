@@ -6,21 +6,21 @@ import { AuthenticatedGuard } from 'src/auth/auth.guard';
 @Controller('todo')
 export class TodoController {
     constructor(private todoService:TodoService){}
-   
+    @UseGuards(AuthenticatedGuard)
     @Get('fetchAll/:uid')
     async fetchAll(@Param('uid') uid:string,@Res() res:Response){
         const result = await this.todoService.fetchAllService(uid);
         res.status(200).json({result:result});
     }
     
-
+    @UseGuards(AuthenticatedGuard)
     @Post('/addTodo/:uid')
     async addTodo(@Param('uid') uid:string,@Body('title') title:string,@Res() res:Response){
        const result = await this.todoService.addTodoService(title,uid);
        res.status(200).json({result:[result]});
     }
-
-
+    
+    @UseGuards(AuthenticatedGuard)
     @Put('updateTodo/:id')
     async updateTodo(@Param('id') id:string,@Res() res:Response){
         await this.todoService.updateTodoService(id);
